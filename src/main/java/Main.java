@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class  Main  {
     public static void main(String[] args)  {
-        short lowLim, upLim;
+        short lowerLimit, upperLimit;
         final int multiplier;
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -14,18 +14,18 @@ public class  Main  {
             System.out.print("Enter the number of columns for the matrix: ");
             int columns = scanner.nextInt();
             System.out.print("Enter the enter the lower limit the matrix(from -32768 to 32767): ");
-            lowLim = scanner.nextShort();
+            lowerLimit = scanner.nextShort();
             System.out.print("Enter the enter the upper limit the matrix(from -32768 to 32767): ");
-            upLim = scanner.nextShort();
-            if (lowLim >= upLim)  {
+            upperLimit = scanner.nextShort();
+            if (lowerLimit >= upperLimit)  {
                     throw new IllegalArgumentException("Upper limit has to be higher than lower one");
             }
 
-            short[][] matrixB = generateMatrix(rows, columns, upLim, lowLim, random);
+            short[][] matrixB = generateMatrix(rows, columns, upperLimit, lowerLimit, random);
             System.out.println("\nGenerated Matrix B:");
             printMatrix(matrixB);
 
-            System.out.print("Enter the multiplier for matrix to be multiplied(from -32768 to 32767): ");
+            System.out.print("Enter the multiplier for matrix B to be multiplied(from -32768 to 32767): ");
             multiplier = scanner.nextInt();
             short[][] matrixC = multiplyMatrix(matrixB, multiplier);
 
@@ -79,12 +79,12 @@ public class  Main  {
         }
     }
 
-    private static short[][] generateMatrix(int row, int column, short upLim, short lowLim, Random rnd){
+    private static short[][] generateMatrix(int row, int column, short upperLimit, short lowerLimit, Random rnd){
         short[][] matrix = new short[row][column];
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < column; j++) {
-                matrix[i][j] = (short) rnd.nextInt(lowLim, upLim+1);
+                matrix[i][j] = (short) rnd.nextInt(lowerLimit, upperLimit+1);
             }
         }
         
