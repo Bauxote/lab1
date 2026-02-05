@@ -13,9 +13,12 @@ public class  Main  {
             int rows = scanner.nextInt();
             System.out.print("Enter the number of columns for the matrix: ");
             int columns = scanner.nextInt();
-            System.out.print("Enter the enter the lower limit the matrix(from -32768 to 32767): ");
+            if (rows <= 0 || columns <= 0) {
+                throw new IllegalArgumentException("Rows and columns must be positive integers.");
+            }
+            System.out.print("Enter the lower limit the matrix(from -32768 to 32767): ");
             lowerLimit = scanner.nextShort();
-            System.out.print("Enter the enter the upper limit the matrix(from -32768 to 32767): ");
+            System.out.print("Enter the upper limit the matrix(from -32768 to 32767): ");
             upperLimit = scanner.nextShort();
             if (lowerLimit >= upperLimit)  {
                     throw new IllegalArgumentException("Upper limit has to be higher than lower one");
@@ -34,9 +37,7 @@ public class  Main  {
 
             System.out.println("\nSum of smallest integers in each row of C: " + calculateSumMinRow(matrixC));}
             catch (InputMismatchException e)  {
-                System.err.println("Invalid input, please enter an integer");}
-            catch (Exception e)  {
-                System.err.println("Error: " +e.getMessage()); 
+                System.err.println("Invalid input, please enter an integer");
             }
             finally  {
             scanner.close();
