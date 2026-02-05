@@ -35,9 +35,6 @@ public class  Main  {
             System.out.println("\nSum of smallest integers in each row of C: " + calculateSumMinRow(matrixC));}
             catch (InputMismatchException e)  {
                 System.err.println("Invalid input, please enter an integer");}
-            catch (Exception e)  {
-                System.err.println("Error: " +e.getMessage()); 
-            }
             finally  {
             scanner.close();
             }
