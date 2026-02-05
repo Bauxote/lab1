@@ -29,7 +29,7 @@ public class  Main  {
             printMatrix(matrixB);
 
             System.out.print("Enter the multiplier for matrix B to be multiplied(from -32768 to 32767): ");
-            multiplier = scanner.nextShort()();
+            multiplier = scanner.nextShort();
             short[][] matrixC = multiplyMatrix(matrixB, multiplier);
 
             System.out.println("\nMatrix C:");
