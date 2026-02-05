@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class  Main  {
     public static void main(String[] args)  {
         short lowerLimit, upperLimit;
-        final int multiplier;
+        final short multiplier;
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         try {
@@ -29,7 +29,7 @@ public class  Main  {
             printMatrix(matrixB);
 
             System.out.print("Enter the multiplier for matrix B to be multiplied(from -32768 to 32767): ");
-            multiplier = scanner.nextInt();
+            multiplier = scanner.nextShort()();
             short[][] matrixC = multiplyMatrix(matrixB, multiplier);
 
             System.out.println("\nMatrix C:");
@@ -43,7 +43,7 @@ public class  Main  {
             scanner.close();
             }
     }
-    public static short[][] multiplyMatrix(short[][] matrix, int a) {
+    public static short[][] multiplyMatrix(short[][] matrix, short a) {
         int rows = matrix.length;
         int cols = matrix[0].length;
         short[][] result = new short[rows][cols];

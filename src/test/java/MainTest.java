@@ -5,7 +5,7 @@ import org.junit.Test;
         @Test
         public void testMultiplyMatrix() {
             short[][] inputMatrix = {{1, 2}, {3, 4}};
-            int multiplier = 2;
+            short multiplier = 2;
             short[][] expected = {{2, 4}, {6, 8}};
             short[][] result = Main.multiplyMatrix(inputMatrix, multiplier);
 
