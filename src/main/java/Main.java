@@ -16,7 +16,7 @@ public class  Main  {
             System.out.print("Enter the upper limit the matrix(from -32768 to 32767): ");
             short upper = scanner.nextShort();
 
-            if (lower >= upper) throw new IllegalArgumentException("Upper limit has to be higher than lower one");
+            if (lower > upper) throw new IllegalArgumentException("Upper limit has to be higher than lower one");
 
             Matrix matrixB = new Matrix(rows, cols, lower, upper);
             System.out.println("Matrix B: \n" + matrixB);
