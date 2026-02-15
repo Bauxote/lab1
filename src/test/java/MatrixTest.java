@@ -7,7 +7,7 @@ import org.junit.Test;
         public void testMultiplyMatrix(){
             Matrix testSubject = new Matrix(1, 1, 5, 5);
             Matrix result = testSubject.multiply(10);
-            assertTrue(result.toString().contains("50"));
+            Assert.assertTrue(result.toString().contains("50"));
         }
 
         @Test
