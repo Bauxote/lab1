@@ -17,4 +17,10 @@ import org.junit.Test;
 
             Assert.assertEquals(15, result);
         }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void testInvalidLimitsOldStyle() {
+            new Matrix(2, 2, 50, 10);
+        }
+
     }
