@@ -10,10 +10,10 @@ public class  Main  {
             System.out.print("Enter the number of columns for the matrix: ");
             int cols = scanner.nextInt();
 
-            System.out.print("Enter the enter the lower limit the matrix(from -32768 to 32767): ");
+            System.out.print("Enter the lower limit the matrix(from -32768 to 32767): ");
             short lower = scanner.nextShort();
 
-            System.out.print("Enter the enter the upper limit the matrix(from -32768 to 32767): ");
+            System.out.print("Enter the upper limit the matrix(from -32768 to 32767): ");
             short upper = scanner.nextShort();
 
             if (lower >= upper) throw new IllegalArgumentException("Upper limit has to be higher than lower one");
