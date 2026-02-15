@@ -7,7 +7,7 @@ public class Matrix {
     private final int cols;
 
     public Matrix(int rows, int cols, int lowerLimit, int  upperLimit) {
-        if (lowerLimit >= upperLimit) {
+        if (lowerLimit > upperLimit) {
             throw new IllegalArgumentException("Upper limit must be greater than lower limit.");
         }
         this.rows = rows;
