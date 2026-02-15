@@ -7,10 +7,14 @@ public class Matrix {
     private final int cols;
 
     public Matrix(int rows, int cols, int lowerLimit, int  upperLimit) {
+        if (lower >= upper) {
+            throw new IllegalArgumentException("Upper limit must be greater than lower limit.");
+        }
         this.rows = rows;
         this.cols = cols;
         this.data = new short[rows][cols];
         java.util.Random rnd = new java.util.Random();
+        
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 this.data[i][j] = (short) rnd.nextInt(lowerLimit, upperLimit + 1);
